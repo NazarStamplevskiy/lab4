@@ -1,0 +1,8 @@
+<app-passenger-add (changed)="getPassengers()"></app-passenger-add>
+<h2>Passengers</h2>
+<ul class="passengers">
+  <li *ngFor="let passenger of passengers" [class.selected]="passenger === selectedPassenger" (click)="onSelect(passenger)">
+    <span class="badge">{{passenger.id}}</span> {{passenger.name}} {{passenger.surname}}
+  </li>
+</ul>
+<app-passenger-details [passenger]="selectedPassenger" (changed)="getPassengers()"></app-passenger-details>
